@@ -12,7 +12,7 @@ namespace CandyShop
         int candies;
         int lollipops;
         double money;
-        double sugarprice;
+        double sugarprice = 0.1 ;
         List<Sweet> sweets = new List<Sweet>();
 
         public Candyshop(int sugar)
@@ -34,11 +34,11 @@ namespace CandyShop
             ++lollipops;
         }
 
-        public void Rise(double percentage)
+        public void Raise(double percentage)
         {
             foreach(Sweet sweet in sweets)
             {
-                sweet.price = sweet.price * (percentage / 100);
+                sweet.price = sweet.price * (1+(percentage / 100));
             }
         }
 

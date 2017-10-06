@@ -10,6 +10,5 @@ namespace CandyShop
     {
         public double price;
         public int sugarNeed;
-
     }
 }

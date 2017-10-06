@@ -12,6 +12,7 @@ namespace CandyShop
         int candies;
         int lollipops;
         double money;
+        double sugarprice;
         List<Sweet> sweets = new List<Sweet>();
 
         public Candyshop(int sugar)
@@ -64,6 +65,19 @@ namespace CandyShop
             else
             {
                 Console.WriteLine("Can not sell more lollipopes then the candishop has in inventory");
+            }
+        }
+
+        public void BuySugar(int amount)
+        {
+            if (amount * sugarprice < money)
+            {
+                sugar += amount;
+                money -= (amount * sugarprice);
+            }
+            else
+            {
+                Console.WriteLine("Out of money. Go to the bank for loan");
             }
         }
 

@@ -32,8 +32,9 @@ The application is accepted if:
 
 ###  What is the difference between a function and a method? [2p]
 #### Your answer:
-[add your answer here]
+[both of them do the same.But
+when a you define a function in a class it's called method.Howewer you cannot write a method without a class. If you can(in C# you cant) it would be independent from any class, then it would be called function.   ]
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+[If you crate an instance from an object the constructor will be called every time. In the constructor you can determine values to fields, define which paramater is needed to create an instance etc..] `

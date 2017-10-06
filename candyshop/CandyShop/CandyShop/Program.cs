@@ -18,9 +18,8 @@ namespace CandyShop
             candyshop.Createsweets(new Candie());
             candyshop.Sellsweets(new Candie(), 1);
             candyshop.Raise(5);
-            Console.WriteLine(lollipop.price);
             candyshop.Sellsweets(new Lollipop(), 1);
-            candyshop.BuySugar(1000);
+            candyshop.BuySugar(10);
             candyshop.Printout();
             Console.ReadLine();
         }

@@ -13,7 +13,7 @@ namespace CandyShop
         int lollipops;
         double money;
         double sugarprice = 0.1 ;
-        List<Sweet> sweets = new List<Sweet>();
+        public List<Sweet> sweets = new List<Sweet>();
 
         public Candyshop(int sugar)
         {
@@ -22,14 +22,14 @@ namespace CandyShop
 
         public void Createsweets(Candie candie)
         {
-            sweets.Add(candie);
+            sweets.Add(new Candie());
             sugar -= candie.sugarNeed;
             ++candies;
         }
 
         public void Createsweets(Lollipop lollipop)
         {
-            sweets.Add(lollipop);
+            sweets.Add(new Lollipop());
             sugar -= lollipop.sugarNeed;
             ++lollipops;
         }
@@ -46,6 +46,7 @@ namespace CandyShop
         {
             if (quantity < candies)
             {
+                sweets.Remove(candie);
                 candies -= quantity;
                 money += candie.price * quantity;
             }
@@ -59,6 +60,7 @@ namespace CandyShop
         {
             if (quantity < lollipops)
             {
+                sweets.Remove(lollipop);
                 lollipops -= quantity;
                 money += lollipop.price * quantity;
             }

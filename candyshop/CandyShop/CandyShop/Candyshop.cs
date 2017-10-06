@@ -32,6 +32,14 @@ namespace CandyShop
             ++lollipops;
         }
 
+        public void Rise(double percentage)
+        {
+            foreach(Sweet sweet in sweets)
+            {
+                sweet.price = sweet.price * (percentage / 100);
+            }
+        }
+
 
     }
 }

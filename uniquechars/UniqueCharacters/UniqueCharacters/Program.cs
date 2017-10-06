@@ -10,7 +10,7 @@ namespace UniqueCharacter
     {
         static void Main(string[] args)
         {
-            UniqueChar.UniqCharacters("anagram");
+            UniqueChar.PrintOut(UniqueChar.UniqCharacters("anagram"));
             Console.ReadLine();
         }
     }

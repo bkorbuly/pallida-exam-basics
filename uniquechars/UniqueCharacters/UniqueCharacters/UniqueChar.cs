@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 namespace UniqueCharacter
 {
     public class UniqueChar
-    {   
+    {
+        
         static public List<char> UniqCharacters(string text)
         {
             var uniqcharlist = new List<char>();
+            text = text.ToLower();
             int counter = 0;
             for (int i = 0; i < text.Length; i++)
             {
@@ -28,6 +30,14 @@ namespace UniqueCharacter
                 }
             }
             return uniqcharlist;
+        }
+
+        static public void PrintOut(List<char> uniqcharlist)
+        {
+            foreach(Char characters in uniqcharlist)
+            {
+                Console.Write("\"{0}\", ", characters);
+            }
         }
     }
 }

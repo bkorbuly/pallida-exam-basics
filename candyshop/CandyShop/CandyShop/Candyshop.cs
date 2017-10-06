@@ -11,6 +11,7 @@ namespace CandyShop
         int sugar;
         int candies;
         int lollipops;
+        double money;
         List<Sweet> sweets = new List<Sweet>();
 
         public Candyshop(int sugar)
@@ -37,6 +38,32 @@ namespace CandyShop
             foreach(Sweet sweet in sweets)
             {
                 sweet.price = sweet.price * (percentage / 100);
+            }
+        }
+
+        public void Sellsweets(Candie candie, int quantity)
+        {
+            if (quantity < candies)
+            {
+                candies -= quantity;
+                money += candie.price * quantity;
+            }
+            else
+            {
+                Console.WriteLine("Can not sell more candies then the candishop has in inventory");
+            }
+        }
+
+        public void Sellsweets(Lollipop lollipop, int quantity)
+        {
+            if (quantity < lollipops)
+            {
+                lollipops -= quantity;
+                money += lollipop.price * quantity;
+            }
+            else
+            {
+                Console.WriteLine("Can not sell more lollipopes then the candishop has in inventory");
             }
         }
 

@@ -12,15 +12,15 @@ namespace FavouriteAnimals
         static string filename = @"../../../../favourites.txt";
         static void Main(string[] args)
         {
-            ArgsEmptyorNot(args);
+            ArgsEmptyorNot(DuplicationCheck(args));
             Console.ReadLine();
         }
 
-        public static void WriteToFile(string[] args)
+        public static void WriteToFile(List<string> args)
         {
             using (var write = new StreamWriter(filename))
             {
-                for (int i = 0; i < args.Length; i++)
+                for (int i = 0; i < args.Count; i++)
                 {
                     write.WriteLine(args[i]);
                     Console.WriteLine(args[i]);
@@ -28,9 +28,9 @@ namespace FavouriteAnimals
             }
         }
 
-        public static void ArgsEmptyorNot(string[] args)
+        public static void ArgsEmptyorNot(List<string> args)
         {
-            if (args.Length == 0)
+            if (args.Count == 0)
             {
                 Console.WriteLine("C# FavouriteAnimals [animal] [animal]");
             }
@@ -39,5 +39,18 @@ namespace FavouriteAnimals
                 WriteToFile(args);
             }
         }
+
+        public static List<string> DuplicationCheck(string[] args)
+        {
+            var filteredargs = new List<string>();
+            foreach(string arg in args)
+            {
+                if (!filteredargs.Contains(arg))
+                {
+                    filteredargs.Add(arg);
+                }
+            }
+            return filteredargs;
+        } 
     }
 }

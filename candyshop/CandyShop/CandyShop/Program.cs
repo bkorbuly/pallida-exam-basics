@@ -10,6 +10,9 @@ namespace CandyShop
     {
         static void Main(string[] args)
         {
+            var candyshop = new Candyshop(300);
+            candyshop.Printout();
+            Console.ReadLine();
         }
     }
 }

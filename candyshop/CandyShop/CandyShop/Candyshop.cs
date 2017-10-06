@@ -81,6 +81,11 @@ namespace CandyShop
             }
         }
 
+        public void Printout()
+        {
+            Console.WriteLine("Inventories: {0} candies, {1} lollipopes, Money: {2}, Sugar: {3}gr.", candies, lollipops, money, sugar);
+        }
+
 
     }
 }

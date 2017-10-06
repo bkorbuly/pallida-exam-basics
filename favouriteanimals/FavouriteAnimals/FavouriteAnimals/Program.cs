@@ -9,7 +9,6 @@ namespace FavouriteAnimals
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             Functions.NiceMain(args);
